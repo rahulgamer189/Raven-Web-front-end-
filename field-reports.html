@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raven | Field Reports</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="reports">
+  <div id="app-shell"></div>
+  <main class="page">
+    <section class="page-heading"><div><p class="eyebrow">FIELD TELEMETRY</p><h1>Responder reports</h1><p class="muted">Capture on-ground conditions, location and resource requirements.</p></div></section>
+    <section class="two-col">
+      <form class="card" id="report-form">
+        <div class="card-head"><div><span class="kicker">SUBMIT</span><h2>New field report</h2></div></div>
+        <label>Location<input name="location" required placeholder="Coordinates or landmark"></label>
+        <label>Condition<textarea name="condition" rows="4" required placeholder="Describe current conditions..."></textarea></label>
+        <label>Resource needs<input name="resources" placeholder="Water, medical kit, transport..."></label>
+        <div class="form-grid"><label>Severity<select name="severity"><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select></label><label>Photo <input name="photo" type="file" accept="image/*"></label></div>
+        <button class="btn btn-primary" type="submit">SUBMIT REPORT</button>
+      </form>
+      <div class="card"><div class="card-head"><div><span class="kicker">REPORT LOG</span><h2>Submitted reports</h2></div><select id="report-filter"><option value="all">All severity</option><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select></div><div id="reports-list" class="report-list"></div></div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="data/mock-data.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/telemetry.js"></script>
+</body>
+</html>

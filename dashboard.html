@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raven | Command Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body data-page="dashboard">
+  <div id="app-shell"></div>
+  <main class="page">
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">RAVEN / COMMAND CENTER</p>
+        <h1>Disaster intelligence at a glance.</h1>
+        <p class="muted">Monitor risk, rainfall, field reports and emergency signals from one operational view.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-ghost" href="map.html">OPEN LIVE MAP</a>
+      </div>
+    </section>
+
+    <section class="metric-grid" id="metrics"></section>
+
+    <section class="dashboard-grid">
+      <article class="card map-card">
+        <div class="card-head"><div><span class="kicker">LIVE MAP</span><h2>Operational picture</h2></div><a href="map.html" class="text-link">Expand ↗</a></div>
+        <div id="mini-map" class="mini-map"></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><div><span class="kicker">WEATHER</span><h2>Conditions</h2></div><span class="live-label"><span class="status-dot live"></span>LIVE</span>
+        <div id="weather-panel"></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><div><span class="kicker">RISK MATRIX</span><h2>Danger zones</h2></div><a href="map.html" class="text-link">Map</a></div>
+        <div id="zone-list"></div>
+        
+      </article>
+
+      <article class="card">
+        <div class="card-head"><div><span class="kicker">RAINFALL</span><h2>Intensity</h2></div><span class="pill orange">mm/hr</span></div>
+        <canvas id="rainfall-chart" height="180"></canvas>
+      </article>
+
+      <article class="card wide">
+        <div class="card-head"><div><span class="kicker">BROADCAST</span><h2>Latest authority alert</h2></div><a href="broadcast.html" class="text-link">Broadcasts</a></div>
+        <div id="latest-broadcast"></div>
+      </article>
+
+      <article class="card wide">
+        <div class="card-head"><div><span class="kicker">LIVE DATA FEED</span><h2>Unified timeline</h2></div><span class="status-dot live">STREAMING</span></div>
+        <div id="live-feed" class="feed"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="data/mock-data.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/danger-zones.js"></script>
+  <script src="js/rainfall.js"></script>
+  <script src="js/broadcast.js"></script>
+  <script src="js/telemetry.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raven | Broadcast Center</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="broadcast">
+  <div id="app-shell"></div>
+  <main class="page">
+    <section class="page-heading"><div><p class="eyebrow">AUTHORITY CHANNEL</p><h1>Emergency broadcasting</h1><p class="muted">Compose, publish and review emergency alerts.</p></div></section>
+    <section class="two-col">
+      <form class="card" id="broadcast-form">
+        <div class="card-head"><div><span class="kicker">NEW ALERT</span><h2>Issue broadcast</h2></div></div>
+        <label>Title<input name="title" required placeholder="e.g. Flash flood warning"></label>
+        <label>Message<textarea name="message" rows="5" required placeholder="Enter public safety instructions..."></textarea></label>
+        <div class="form-grid"><label>Severity<select name="severity"><option>Critical</option><option>High</option><option>Medium</option><option>Low</option></select></label><label>Affected area<input name="area" required placeholder="Area / district"></label></div>
+        <button class="btn btn-danger" type="submit">PUBLISH ALERT</button>
+        <p class="form-note">Demo only — broadcasts are saved to localStorage.</p>
+      </form>
+      <div class="card"><div class="card-head"><div><span class="kicker">HISTORY</span><h2>Recent broadcasts</h2></div></div><div id="broadcast-history" class="feed"></div></div>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="data/mock-data.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/broadcast.js"></script>
+</body>
+</html>
